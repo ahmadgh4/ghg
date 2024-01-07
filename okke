@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+union {
+  int num[10];
+  int max;
+};
+
+int main() {
+  union y;
+  y.num[0] = 12;
+  y.num[1] = 24;
+  y.num[2] = 36;
+  y.num[3] = 48;
+  y.num[4] = 60;
+  y.num[5] = 72;
+  y.num[6] = 84;
+  y.num[7] = 96;
+  y.num[8] = 108;
+  y.num[9] = 120;
+
+int i, max = y.num[0];
+  for (i = 1; i < 10; i++) {
+    if (y.num[i] > max) {
+      max = y.num[i];
+    }
+  }
+  y.max = max;
+ cout<<"The maximum value is \n"<< y.max;
+
+  return 0;
+}
